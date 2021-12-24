@@ -1,5 +1,6 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import MyComponent from './example/MyComponent';
 
 function App() {
   return (
@@ -10,14 +11,7 @@ function App() {
           Dai hoc Bach Khoa Ha Noi
           so 2 Dai Co Viet
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <MyComponent />
       </header>
     </div>
   );
