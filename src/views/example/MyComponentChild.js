@@ -1,4 +1,5 @@
 import react from "react";
+import './MyComponentChild.scss'
 
 class MyComponentChild extends react.Component {
 
@@ -19,6 +20,10 @@ class MyComponentChild extends react.Component {
         })
     }
 
+    handleOnClickDelete = (job) => {
+        console.log('>>>> handelOnClickDetele: ', job)
+        this.props.deleteAJob(job)
+    }
     render() {
         // console.log('>>>> Check props: ', this.props)
         // var name = this.props.name
@@ -30,8 +35,8 @@ class MyComponentChild extends react.Component {
             <>
                 {showJobs === false ?
                     <div>
-                        <button
-                            onClick={() => this.handleShowHide()} >show
+                        <button className="btn-show"
+                            onClick={() => this.handleShowHide()} >Show
                         </button>
                     </div>
                     :
@@ -40,8 +45,12 @@ class MyComponentChild extends react.Component {
                             {
                                 arrJobs.map((item, index) => {
                                     return (
-                                        <div key={item.id}>
-                                            {item.title} - {item.salary}
+                                        <div className="btn-row"
+                                            key={item.id}>
+                                            <div className="btn-list">{item.title} - {item.salary} $</div>
+                                            <></>
+                                            <button className="btn-delete"
+                                                onClick={() => this.handleOnClickDelete(item)}>x</button>
                                         </div>
                                     )
                                 })
@@ -49,8 +58,8 @@ class MyComponentChild extends react.Component {
                         </div>
 
                         <div>
-                            <button
-                                onClick={() => this.handleShowHide()}  >hide
+                            <button className="btn-hide"
+                                onClick={() => this.handleShowHide()}  >Hide
                             </button>
                         </div>
                     </>

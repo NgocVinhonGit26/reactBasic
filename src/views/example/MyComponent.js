@@ -9,9 +9,9 @@ class MyComponent extends react.Component {
         // firstName: '',
         // lastName: '',
         arrJobs: [
-            { id: 'abcJob1', title: 'Developers', salary: '500$' },
-            { id: 'abcJob2', title: 'Testers', salary: '400$' },
-            { id: 'abcJob3', title: 'Project Managers', salary: '1000$' }
+            { id: 'abcJob1', title: 'Developers', salary: '500' },
+            { id: 'abcJob2', title: 'Testers', salary: '400' },
+            { id: 'abcJob3', title: 'Project Managers', salary: '1000' }
         ]
     }
 
@@ -19,6 +19,14 @@ class MyComponent extends react.Component {
         console.log('check job from parent: ', job)
         this.setState({
             arrJobs: [...this.state.arrJobs, job]
+        })
+    }
+
+    deleteAJob = (job) => {
+        let currentJobs = this.state.arrJobs
+        currentJobs = currentJobs.filter(item => item.id !== job.id)
+        this.setState({
+            arrJobs: currentJobs
         })
     }
     /* 
@@ -35,6 +43,7 @@ class MyComponent extends react.Component {
                 />
                 <MyComponentChild
                     arrJobs={this.state.arrJobs}
+                    deleteAJob={this.deleteAJob}
                 />
             </>
         )
