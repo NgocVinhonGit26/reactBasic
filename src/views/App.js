@@ -14,6 +14,8 @@ import {
 
 import Nav from './Navbar/NavBar';
 import Home from './example/Home';
+import ListUser from './Users/ListUser';
+import DetailUser from './Users/DetailUser';
 
 
 
@@ -36,6 +38,12 @@ function App() {
             </Route>
             <Route path="/about">
               <MyComponent />
+            </Route>
+            <Route path="/user" exact>
+              <ListUser />
+            </Route>
+            <Route path="/user/:id">
+              <DetailUser />
             </Route>
           </Switch>
         </header>

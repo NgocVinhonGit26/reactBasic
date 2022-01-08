@@ -4,9 +4,18 @@ import AddTodo from "./AddTodo";
 
 import { toast } from 'react-toastify';
 
+// import { withRouter } from "react-router";
+
 
 
 class Listodo extends react.Component {
+
+    // componentDidMount() {
+    //     setTimeout(() => {
+    //         // console.log('check timeout')
+    //         this.props.history.push('/about')
+    //     }, 3000)
+    // }
 
     state = {
         listTodos: [
