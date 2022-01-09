@@ -1,6 +1,7 @@
 import react from "react";
 import { withRouter } from "react-router";
 import Color from "../HOC/Color";
+import avatar from '../../assets/images/bin.jpg'
 
 class Home extends react.Component {
 
@@ -13,7 +14,12 @@ class Home extends react.Component {
     render() {
         console.log('>>>>> check props: ', this.props)
         return (
-            <div>helllo</div>
+            <>
+                <div>helllo</div>
+                <div>
+                    <img src={avatar} style={{ width: '250px', height: '250px' }} />
+                </div>
+            </>
         )
     }
 }
